@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Set Safari Maze 3D - Math Fest Edition</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Jungle ambience and SFX -->
+  <audio id="jungleMusic" src="jungle.mp3" loop
+    preload="auto"></audio>
+  <audio id="doorSfx" src="https://cdn.pixabay.com/audio/2022/10/16/audio_12c6c6f6e2.mp3" preload="auto"></audio>
+  <audio id="powerupSfx" src="powerup.mp3" preload="auto"></audio>
+  <audio id="speedSfx" src="powerup.mp3" preload="auto"></audio>
+  <audio id="ghostSfx" src="powerup.mp3" preload="auto"></audio>
+  <canvas id="threejs-canvas"></canvas>
+  <canvas id="minimapCanvas" width="340" height="340"></canvas>
+  <div id="gameTimer">Timer: 130</div>
+  <div id="scoreDisplay">Score: 0</div>
+
+  <!-- Settings Button -->
+<button id="settingsBtn" title="Settings" aria-label="Settings">
+  <img src="icon.png" alt="Settings" style="width:32px;height:32px;">
+</button>
+
+<!-- Settings Modal -->
+<div id="settingsModal" class="centered">
+  <div class="settings-card">
+    <h2><span class="material-symbols-outlined" style="vertical-align:middle;">settings</span> Settings</h2>
+    <div class="settings-group">
+      <label for="musicVolume">
+        <span class="material-symbols-outlined">music_note</span> Music Volume
+      </label>
+      <input type="range" id="musicVolume" min="0" max="1" step="0.01" value="0.5">
+    </div>
+    <div class="settings-group">
+      <label for="sfxVolume">
+        <span class="material-symbols-outlined">graphic_eq</span> SFX Volume
+      </label>
+      <input type="range" id="sfxVolume" min="0" max="1" step="0.01" value="0.5">
+    </div>
+    <button id="closeSettingsBtn" class="modern-btn">
+      <span class="material-symbols-outlined">close</span> Close
+    </button>
+  </div>
+</div>
+
+<!-- Material Symbols for icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  
+  <div id="startScreen">
+    
+    <div class="title">Set Safari: Maze Edition 3D</div>
+    <div class="instructions">
+      <b style="font-size:1.5em;">Welcome, Explorer!</b><br>
+      <ul style="text-align:left;margin:14px 0 0 0;">
+        <li>Use <b>WASD</b> to move, <b>←/→</b> or <b>Q/E</b> to turn. Mouse to look around.</li>
+        <li>Navigate the maze in first-person 3D!</li>
+        <li>Find and complete each challenge before the timer runs out.</li>
+        <li>Collect glowing orbs for powerups and bonus points!</li>
+        <li>All puzzles, combos, and report card included.</li>
+      </ul>
+    </div>
+    <button class="btn" id="startBtn">Start Adventure</button>
+    <button class="btn" id="nextLevelBtn" style="display:none;">Next Level</button>
+  </div>
+  <div id="quizContainer" style="display:none;">
+    <table cellpadding="6" cellspacing="0" style="
+ border-collapse: separate;
+ border-spacing: 0;
+ min-width:600px;
+ border-radius: 10px;
+ overflow: hidden;
+ box-shadow: 0 4px 22px #0008;
+">
+      <caption style="font-weight:bold;font-family:syne; font-size:1.5em;margin-bottom:15px;">Board-wise
+        Registered, Appeared, and Pass
+        Percentage</caption>
+      <thead style="background:#ffe066;color:#222">
+        <tr>
+          <th style="border-top-left-radius:10px; border-bottom:2px solid #ffe066; border-right:1.5px solid #ffe066;">
+            Sl. No.</th>
+          <th style="border-bottom:2px solid #ffe066; border-right:1.5px solid #ffe066;">Name of Board</th>
+          <th style="border-bottom:2px solid #ffe066; border-right:1.5px solid #ffe066;">Registered<br>Total</th>
+          <th style="border-bottom:2px solid #ffe066; border-right:1.5px solid #ffe066;">Appeared<br>Total</th>
+          <th style="border-bottom:2px solid #ffe066; border-right:1.5px solid #ffe066;">Pass %<br>Boys</th>
+          <th style="border-bottom:2px solid #ffe066; border-right:1.5px solid #ffe066;">Pass %<br>Girls</th>
+          <th style="border-top-right-radius:10px; border-bottom:2px solid #ffe066;">Pass %<br>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="border-right:1.5px solid #393b44;">1</td>
+          <td style="border-right:1.5px solid #393b44;">Central Board of Secondary Education, New Delhi</td>
+          <td style="border-right:1.5px solid #393b44;">100%</td>
+          <td style="border-right:1.5px solid #393b44;">92.4%</td>
+          <td style="border-right:1.5px solid #393b44;">81.3%</td>
+          <td style="border-right:1.5px solid #393b44;">81.5%</td>
+          <td>81.4%</td>
+        </tr>
+        <tr>
+          <td style="border-bottom-left-radius:10px; border-right:1.5px solid #393b44;">2</td>
+          <td style="border-right:1.5px solid #393b44;">Council for the Indian School Certificate Examinations, New
+            Delhi</td>
+          <td style="border-right:1.5px solid #393b44;">100%</td>
+          <td style="border-right:1.5px solid #393b44;">82.5%</td>
+          <td style="border-right:1.5px solid #393b44;">98.6%</td>
+          <td style="border-right:1.5px solid #393b44;">99.4%</td>
+          <td style="border-bottom-right-radius:10px;">99.1%</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class="quiz-timer" id="quizTimer"></div>
+    <h2 id="question">Question goes here</h2>
+    <div class="quiz-options" id="answers"></div>
+    <div class="quiz-feedback" id="quizFeedback"></div>
+    <button class="quiz-next-btn" id="nextBtn" style="display:none;">Next</button>
+  </div>
+  <div id="comboFloat" class="combo-float"></div>
+  <div id="doorMsg">The Ancient Door Opens!</div>
+  <div id="popup"></div>
+  <div id="reportCard">
+    <div class="title">Report Card</div>
+    <div class="score"></div>
+    <table>
+      <tbody>
+        <tr>
+          <th>Questions Correct</th>
+          <td id="rc-correct"></td>
+        </tr>
+        <tr>
+          <th>Questions Incorrect</th>
+          <td id="rc-wrong"></td>
+        </tr>
+        <tr>
+          <th>Max Combo</th>
+          <td id="rc-maxcombo"></td>
+        </tr>
+        <tr>
+          <th>Time Taken (s)</th>
+          <td id="rc-time"></td>
+        </tr>
+        <tr>
+          <th>Powerups Collected</th>
+          <td id="rc-powerups"></td>
+        </tr>
+        <tr>
+          <th>Final Score</th>
+          <td id="rc-score"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn" id="restartBtn">Next Level</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+  <script src="gameScript.js"></script>
+</body>
+
+
+</html>
