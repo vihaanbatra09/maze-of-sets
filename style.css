@@ -183,10 +183,12 @@ div.instructions {
 }
 #settingsModal.centered .settings-card {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   min-width: 320px;
 }
+
 #settingsModal.sidepanel .settings-card {
   position: absolute;
   top: 60px; right: 32px;
@@ -195,6 +197,7 @@ div.instructions {
   left: auto; bottom: auto;
   transform: none;
 }
+
 .settings-card {
   background: rgba(30,30,40,0.82);
   border-radius: 18px;
