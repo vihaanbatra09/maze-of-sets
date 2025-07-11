@@ -93,12 +93,6 @@ settingsBtn.addEventListener('click', () => {
       cameraModeGroup && (cameraModeGroup.style.display = 'none');
       if (!gamePausedForSettings) {
         gamePausedForSettings = true;
-        if (timerInterval) {
-          clearInterval(timerInterval);
-          timerWasRunning = true;
-        } else {
-          timerWasRunning = false;
-        }
         pauseGameLoop = true;
       }
     }
@@ -871,7 +865,11 @@ function createFirstPersonCamera() {
           options: ["182.0%", "0%", "99.4%", "82.6%"],
           answer: "0%"
         }
+      ],
+      [
+        
       ]
+
     ]
 
 
