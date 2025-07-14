@@ -1128,6 +1128,7 @@ function showQuiz() {
                 btn.classList.add('correct');
                 quizFeedbackEl.textContent = 'Correct!';
                 quizFeedbackEl.style.color = "#388e3c";
+                quizFeedbackEl.style.fontSize = "1.5em";
                 combo++;
                 if (combo > maxCombo) maxCombo = combo;
                 correctCount++;
@@ -1137,6 +1138,7 @@ function showQuiz() {
                 btn.classList.add('incorrect');
                 quizFeedbackEl.textContent = 'Wrong!';
                 quizFeedbackEl.style.color = "#e53935";
+                quizFeedbackEl.style.fontSize = "1.5em";
                 wrongCount++;
                 combo = 0;
                 score -= 20;
