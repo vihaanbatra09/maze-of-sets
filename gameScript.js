@@ -824,271 +824,272 @@ function showTutorialPopups() {
 }
 // --- QUESTIONS (Level 1: Your SET with TABLE) ---
 const levelQuestions = [
-    // Easy (Level 1) - 17 questions (4-5 correct per option)
+    // Easy (Level 1)
     [
-        { // D
-            question: "What is the union of pass % for boys and girls in CBSE?",
+        {
+            question: "Let A = pass % for boys in CBSE, B = pass % for girls in CBSE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["81.4%", "0%", "81.3%", "162.8%"],
             answer: "162.8%"
         },
-        { // A
-            question: "What is the intersection of pass % for boys and girls in CBSE?",
+        {
+            question: "Let A = pass % for boys in CBSE, B = pass % for girls in CBSE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["0%", "81.5%", "99.1%", "81.3%"],
             answer: "0%"
         },
-        { // C
-            question: "What is the difference between pass % of boys and girls in CBSE?",
+        {
+            question: "Let A = pass % for boys in CBSE, B = pass % for girls in CBSE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["1.0%", "81.5%", "0.2%", "81.3%"],
             answer: "0.2%"
         },
-        { // B
-            question: "What is the complement of pass % for boys in CBSE (with respect to 100%)?",
+        {
+            question: "Let A = pass % for boys in CBSE.\nWhat is the complement of A with respect to 100%?\nExpressed as: A′",
             options: ["99.1%", "18.7%", "0%", "81.3%"],
             answer: "18.7%"
         },
-        { // D
-            question: "What is the union of total pass % in both boards?",
+        {
+            question: "Let A = total pass % in CBSE, B = total pass % in CISCE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["99.1%", "0%", "81.4%", "180.5%"],
             answer: "180.5%"
         },
-        { // A
-            question: "What is the intersection of total pass % in both boards?",
+        {
+            question: "Let A = total pass % in CBSE, B = total pass % in CISCE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["0%", "81.4%", "99.1%", "180.5%"],
             answer: "0%"
         },
-        { // C
-            question: "What is the difference between registered % and appeared % for CBSE?",
+        {
+            question: "Let A = registered % for CBSE, B = appeared % for CBSE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["92.4%", "93.5%", "7.6%", "81.4%"],
             answer: "7.6%"
         },
-        { // D
-            question: "What is the complement of girls' pass % in CISCE (with respect to 100%)?",
+        {
+            question: "Let A = girls' pass % in CISCE.\nWhat is the complement of A with respect to 100%?\nExpressed as: A′",
             options: ["18.5%", "81.5%", "99.4%", "0.6%"],
             answer: "0.6%"
         },
-        { // B
-            question: "What is the union of registered % for both boards?",
+        {
+            question: "Let A = registered % in CBSE, B = registered % in CISCE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["83.1%", "200%", "100%", "176.6%"],
             answer: "200%"
         },
-        { // C
-            question: "What is the intersection of registered % for both boards?",
+        {
+            question: "Let A = registered % in CBSE, B = registered % in CISCE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["200%", "93.5%", "0%", "83.1%"],
             answer: "0%"
         },
-        { // A
-            question: "What is the difference between pass % of boys in CISCE and CBSE?",
+        {
+            question: "Let A = pass % for boys in CISCE, B = pass % for boys in CBSE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["17.3%", "81.3%", "98.6%", "99.1%"],
             answer: "17.3%"
         },
-        { // D
-            question: "What is the complement of total pass % in CISCE (with respect to 100%)?",
+        {
+            question: "Let A = total pass % in CISCE.\nWhat is the complement of A with respect to 100%?\nExpressed as: A′",
             options: ["1.1%", "82.6%", "99.1%", "0.9%"],
             answer: "0.9%"
         },
-        { // B
-            question: "What is the union of appeared % for both boards?",
+        {
+            question: "Let A = appeared % in CBSE, B = appeared % in CISCE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["93.5%", "174.9%", "92.4%", "83.1%"],
             answer: "174.9%"
         },
-        { // A
-            question: "What is the intersection of appeared % for both boards?",
+        {
+            question: "Let A = appeared % in CBSE, B = appeared % in CISCE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["0%", "175.0%", "83.1%", "92.4%"],
             answer: "0%"
         },
-        { // D
-            question: "What is the difference between girls' pass % in CISCE and CBSE?",
+        {
+            question: "Let A = girls' pass % in CISCE, B = girls' pass % in CBSE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["81.5%", "0%", "99.4%", "17.9%"],
             answer: "17.9%"
         },
-        { // C
-            question: "What is the complement of total pass % in CBSE (with respect to 100%)?",
+        {
+            question: "Let A = total pass % in CBSE.\nWhat is the complement of A with respect to 100%?\nExpressed as: A′",
             options: ["99.1%", "0%", "18.6%", "81.4%"],
             answer: "18.6%"
         },
-        { // B
-            question: "What is the union of boys' pass % in both boards?",
+        {
+            question: "Let A = boys' pass % in CBSE, B = boys' pass % in CISCE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["98.6%", "179.9%", "81.3%", "99.1%"],
             answer: "179.9%"
         }
     ],
-    // Medium (Level 2) - 17 questions (4-5 correct per option)
+    // Medium (Level 2)
     [
-        { // D
-            question: "What is the intersection of boys' pass % in both boards?",
+        {
+            question: "Let A = boys' pass % in CBSE, B = boys' pass % in CISCE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["179.9%", "81.3%", "98.6%", "0%"],
             answer: "0%"
         },
-        { // A
-            question: "What is the difference between pass % total in CISCE and CBSE?",
+        {
+            question: "Let A = total pass % in CISCE, B = total pass % in CBSE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["17.7%", "0%", "99.1%", "81.4%"],
             answer: "17.7%"
         },
-        { // C
-            question: "What is the complement of registered % for CBSE (with respect to 100%)?",
+        {
+            question: "Let A = registered % for CBSE.\nWhat is the complement of A with respect to 100%?\nExpressed as: A′",
             options: ["6.5%", "81.4%", "0%", "93.5%"],
             answer: "0%"
         },
-        { // B
-            question: "What is the union of girls' pass % in both boards?",
+        {
+            question: "Let A = girls' pass % in CBSE, B = girls' pass % in CISCE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["81.5%", "180.9%", "99.4%", "181.5%"],
             answer: "180.9%"
         },
-        { // D
-            question: "What is the intersection of girls' pass % in both boards?",
+        {
+            question: "Let A = girls' pass % in CBSE, B = girls' pass % in CISCE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["81.5%", "180.9%", "99.4%", "0%"],
             answer: "0%"
         },
-        { // A
-            question: "What is the difference between appeared % in CBSE and CISCE?",
+        {
+            question: "Let A = appeared % in CBSE, B = appeared % in CISCE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["9.9%", "10.2%", "92.4%", "82.5%"],
             answer: "9.9%"
         },
-        { // C
-            question: "What is the complement of appeared % in CISCE (with respect to 100%)?",
+        {
+            question: "Let A = appeared % in CISCE.\nWhat is the complement of A with respect to 100%?\nExpressed as: A′",
             options: ["0%", "82.5%", "17.5%", "99.1%"],
             answer: "17.5%"
         },
-        { // B
-            question: "What is the union of pass % total and appeared % for CBSE?",
+        {
+            question: "Let A = pass % total for CBSE, B = appeared % for CBSE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["81.4%", "173.8%", "99.1%", "92.4%"],
             answer: "173.8%"
         },
-        { // D
-            question: "What is the intersection of pass % total and appeared % for CBSE?",
+        {
+            question: "Let A = pass % total for CBSE, B = appeared % for CBSE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["81.4%", "173.8%", "92.4%", "0%"],
             answer: "0%"
         },
-        { // A
-            question: "What is the difference between registered % and pass % total for CISCE?",
+        {
+            question: "Let A = registered % for CISCE, B = pass % total for CISCE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["0.9%", "99.1%", "83.1%", "0%"],
             answer: "0.9%"
         },
-        { // C
-            question: "What is the complement of girls' pass % in CBSE (with respect to 100%)?",
+        {
+            question: "Let A = girls' pass % in CBSE.\nWhat is the complement of A with respect to 100%?\nExpressed as: A′",
             options: ["0%", "81.5%", "18.5%", "99.4%"],
             answer: "18.5%"
         },
-        { // B
-            question: "What is the union of registered % and pass % total for CBSE?",
+        {
+            question: "Let A = registered % for CBSE, B = pass % total for CBSE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["81.4%", "100%", "174.9%", "93.5%"],
             answer: "100%"
         },
-        { // D
-            question: "What is the intersection of registered % and pass % total for CBSE?",
+        {
+            question: "Let A = registered % for CBSE, B = pass % total for CBSE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["174.9%", "0%", "93.5%", "81.4%"],
             answer: "81.4%"
         },
-        { // A
-            question: "What is the difference between pass % boys and pass % total in CBSE?",
+        {
+            question: "Let A = pass % boys in CBSE, B = pass % total in CBSE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["0.1%", "81.3%", "81.4%", "99.1%"],
             answer: "0.1%"
         },
-        { // B
-            question: "What is the complement of registered % for CISCE (with respect to 100%)?",
+        {
+            question: "Let A = registered % for CISCE.\nWhat is the complement of A with respect to 100%?\nExpressed as: A′",
             options: ["16.9%", "0%", "83.1%", "99.1%"],
             answer: "0%"
         },
-        { // C
-            question: "What is the union of pass % girls and appeared % for CISCE?",
+        {
+            question: "Let A = pass % girls for CISCE, B = appeared % for CISCE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["99.4%", "82.5%", "181.9%", "182.0%"],
             answer: "181.9%"
         },
-        { // D
-            question: "What is the intersection of pass % girls and appeared % for CISCE?",
+        {
+            question: "Let A = pass % girls for CISCE, B = appeared % for CISCE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["99.4%", "182.0%", "82.5%", "0%"],
             answer: "0%"
         }
     ],
-    // Hard (Level 3) - 17 questions (4-5 correct per option)
+    // Hard (Level 3)
     [
-        { // B
-            question: "What is the difference between union of pass % boys in both boards and union of pass % girls in both boards?",
+        {
+            question: "Let A = union of boys' pass % in both boards, B = union of girls' pass % in both boards.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["1.0%", "-1.0%", "0%", "99.1%"],
             answer: "-1.0%"
         },
-        { // C
-            question: "What is the complement of union of pass % total in both boards (with respect to 200%)?",
+        {
+            question: "Let A = union of total pass % in both boards.\nWhat is the complement of A with respect to 200%?\nExpressed as: A′",
             options: ["180.5%", "81.4%", "19.5%", "99.1%"],
             answer: "19.5%"
         },
-        { // D
-            question: "What is the union of all registered, appeared, and pass % total in CBSE?",
+        {
+            question: "Let A = all registered, appeared, and pass % total in CBSE.\nWhat is the union of A?\nExpressed as: A ∪ B ∪ C",
             options: ["92.4%", "93.5%", "81.4%", "273.8%"],
             answer: "273.8%"
         },
-        { // A
-            question: "What is the intersection of all registered, appeared, and pass % total in CBSE?",
+        {
+            question: "Let A = all registered, appeared, and pass % total in CBSE.\nWhat is the intersection of A?\nExpressed as: A ∩ B ∩ C",
             options: ["81.4%", "0%", "93.5%", "267.3%"],
             answer: "81.4%"
         },
-        { // B
-            question: "What is the difference between union of pass % boys and girls in CISCE and pass % total in CISCE?",
+        {
+            question: "Let A = union of pass % boys and girls in CISCE, B = pass % total in CISCE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["0%", "98.9%", "198.0%", "99.0%"],
             answer: "98.9%"
         },
-        { // D
-            question: "What is the complement of union of pass % boys and girls in CBSE (with respect to 200%)?",
+        {
+            question: "Let A = union of pass % boys and girls in CBSE.\nWhat is the complement of A with respect to 200%?\nExpressed as: A′",
             options: ["162.8%", "81.4%", "99.1%", "37.2%"],
             answer: "37.2%"
         },
-        { // A
-            question: "What is the union of appeared % in both boards and pass % total in CBSE?",
+        {
+            question: "Let A = appeared % in both boards, B = pass % total in CBSE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["174.9%", "81.4%", "92.4%", "99.1%"],
             answer: "174.9%"
         },
-        { // C
-            question: "What is the intersection of appeared % in both boards and pass % total in CBSE?",
+        {
+            question: "Let A = appeared % in both boards, B = pass % total in CBSE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["173.8%", "92.4%", "0%", "81.4%"],
             answer: "0%"
         },
-        { // D
-            question: "What is the difference between union of registered % and appeared % in both boards?",
+        {
+            question: "Let A = union of registered % and appeared % in both boards.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["1.6%", "0%", "176.6%", "25.1%"],
             answer: "25.1%"
         },
-        { // A
-            question: "What is the complement of intersection of pass % boys in both boards (with respect to 100%)?",
+        {
+            question: "Let A = intersection of boys' pass % in both boards.\nWhat is the complement of A with respect to 100%?\nExpressed as: A′",
             options: ["100%", "0%", "99.1%", "81.4%"],
             answer: "100%"
         },
-        { // B
-            question: "What is the union of pass % total in CBSE and pass % boys in CISCE?",
+        {
+            question: "Let A = pass % total in CBSE, B = pass % boys in CISCE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["81.4%", "180.0%", "98.6%", "99.1%"],
             answer: "180.0%"
         },
-        { // C
-            question: "What is the intersection of pass % total in CBSE and pass % boys in CISCE?",
+        {
+            question: "Let A = pass % total in CBSE, B = pass % boys in CISCE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["180.5%", "98.6%", "0%", "81.4%"],
             answer: "0%"
         },
-        { // D
-            question: "What is the difference between pass % girls in CISCE and appeared % in CISCE?",
+        {
+            question: "Let A = pass % girls in CISCE, B = appeared % in CISCE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["0%", "99.4%", "82.5%", "16.9%"],
             answer: "16.9%"
         },
-        { // A
-            question: "What is the complement of union of registered % and appeared % in CBSE (with respect to 200%)?",
+        {
+            question: "Let A = union of registered % and appeared % in CBSE.\nWhat is the complement of A with respect to 200%?\nExpressed as: A′",
             options: ["7.6%", "14.1%", "185.9%", "81.4%"],
             answer: "7.6%"
         },
-        { // B
-            question: "What is the union of pass % boys and pass % total in CISCE?",
+        {
+            question: "Let A = pass % boys in CISCE, B = pass % total in CISCE.\nWhat is the union of A and B?\nExpressed as: A ∪ B",
             options: ["98.6%", "197.7%", "81.4%", "99.1%"],
             answer: "197.7%"
         },
-        { // C
-            question: "What is the intersection of pass % boys and pass % total in CISCE?",
+        {
+            question: "Let A = pass % boys in CISCE, B = pass % total in CISCE.\nWhat is the intersection of A and B?\nExpressed as: A ∩ B",
             options: ["197.7%", "0%", "98.6%", "99.1%"],
             answer: "98.6%"
         },
-        { // D
-            question: "What is the difference between union of pass % boys and girls in CISCE and pass % total in CBSE?",
+        {
+            question: "Let A = union of pass % boys and girls in CISCE, B = pass % total in CBSE.\nWhat is the difference A − B?\nExpressed as: A − B",
             options: ["198.0%", "81.4%", "99.1%", "117.5%"],
             answer: "117.5%"
         }
     ]
 ];
+
 
 
 
